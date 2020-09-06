@@ -24,9 +24,9 @@ int cambiar_estado(CARACTER c)
         return tabla_transicion[estado_actual][LETRA];
     else if(isspace(c))
         return tabla_transicion[estado_actual][ESPACIO];
-    else if( c == '#')
+    else if(c == '#')
         return tabla_transicion[estado_actual][NUMERAL];
-    else if( c == EOF)
+    else if(c == EOF)
         return tabla_transicion[estado_actual][FDT];
     else    
         return tabla_transicion[estado_actual][OTRO];
@@ -71,11 +71,8 @@ TOKEN scanner(FILE* archivo)
     {
         c = fgetc(archivo);
         estado_actual = cambiar_estado(c);
-        //printf("Caracter:%c\n",c);
-        //printf("Estado:%d\n",estado_actual);
     }
     tk = token_reconocido(estado_actual,archivo); 
-    //printf("Token:%d\n",tk);
     estado_actual = 0;
     return tk;
 }

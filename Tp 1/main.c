@@ -9,17 +9,17 @@ int main()
 {
     TOKEN token_leido; 
     FILE* archivo;
-    archivo = fopen("datosPrueba.txt","r+");
+    archivo = fopen("datosPrueba.txt","r");
 
     printf("---------------------------\n");
     do
     {  
-        token_leido = scanner(archivo);         // analisis del scanner y retorno token leido
+        token_leido = scanner(archivo);              
         switch(token_leido)
         {
             case IDENTIFICADOR:
             printf("Identificador\n");
-            identificadores++;                  // acumulo cantidades en funcion de que token reconoci
+            identificadores++;            
             break;
             case CONSTANTE_ENTERA:
             printf("Constante entera\n");

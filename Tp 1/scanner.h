@@ -1,7 +1,10 @@
+#ifndef SCANNER_H_INCLUDED
+#define SCANNER_H_INCLUDED
+
 #include <stdio.h>
-#include <stdlib.h>     // para EXIT_SUCESS , EXIT_FAILURE , etc
-#include <ctype.h>      // para las funciones isalpha(...) , isspace(...) , etc
-#include <stdbool.h>    // para poder usar el tipo 'bool'
+#include <stdlib.h>
+#include <ctype.h>      
+#include <stdbool.h>    
 
 typedef enum
 {
@@ -28,3 +31,5 @@ TOKEN scanner(FILE*);
 int cambiar_estado(CARACTER);
 TOKEN token_reconocido(int,FILE*);
 bool debo_parar(int);
+
+#endif // SCANNER_H_INCLUDED
