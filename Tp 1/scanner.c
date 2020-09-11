@@ -16,7 +16,7 @@ int tabla_transicion[9][6] =
     {99, 99, 99, 99, 99, 99},
 };
 
-int cambiar_estado(char c)
+int cambiar_estado()
 {
     if(isdigit(c))
         return tabla_transicion[estado_actual][DIGITO];
@@ -36,14 +36,14 @@ int cambiar_estado(char c)
 // estado no aceptor -> false
 const bool estados[9] = {false,false,true,false,true,true,true,false,true};
 
-bool debo_parar(int estado)
+bool debo_parar()
 {
-    return estados[estado];
+    return estados[estado_actual];
 }
 
-TOKEN token_reconocido(int estado)
+TOKEN token_reconocido()
 {
-    switch(estado)
+    switch(estado_actual)
     {
     case 2:
         ungetc(c,stdin); 
@@ -69,12 +69,12 @@ TOKEN token_reconocido(int estado)
 TOKEN scanner()
 {
     TOKEN tk;
-    while(!debo_parar(estado_actual))
+    while(!debo_parar())
     {
         c = getchar();
-        estado_actual = cambiar_estado(c);
+        estado_actual = cambiar_estado();
     }
-    tk = token_reconocido(estado_actual); 
+    tk = token_reconocido(); 
     estado_actual = 0;
     return tk;
 }

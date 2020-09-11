@@ -28,8 +28,8 @@ typedef enum
 
 // Declaraciones de funciones a utilizar
 TOKEN scanner();
-int cambiar_estado(char);
-TOKEN token_reconocido(int);
-bool debo_parar(int);
+int cambiar_estado();
+TOKEN token_reconocido();
+bool debo_parar();
 
 #endif // SCANNER_H_INCLUDED
