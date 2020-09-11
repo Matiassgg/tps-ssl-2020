@@ -7,19 +7,16 @@ int errores = 0;
 
 int main()
 {
-    TOKEN token_leido; 
-    FILE* archivo;
-    archivo = fopen("datosPrueba.txt","r");
-
-    printf("---------------------------\n");
+    TOKEN token_leido;
+    printf("-------------------\n");
     do
     {  
-        token_leido = scanner(archivo);              
+        token_leido = scanner();              
         switch(token_leido)
         {
             case IDENTIFICADOR:
             printf("Identificador\n");
-            identificadores++;            
+            identificadores++;    
             break;
             case CONSTANTE_ENTERA:
             printf("Constante entera\n");
@@ -36,14 +33,12 @@ int main()
             }
     } while(token_leido != FIN);
 
-    printf("---------------------------\n");
+    printf("-------------------\n");
     printf("Totales:\n");
-    printf("Identificadores: %i \n",identificadores);
-    printf("Constantes enteras: %i \n",constantes);
-    printf("Numerales: %i \n",numerales);
-    printf("Errores: %i \n",errores);
-    printf("---------------------------\n");
+    printf("Identificadores: %i\n",identificadores);
+    printf("Constantes enteras: %i\n",constantes);
+    printf("Numerales: %i\n",numerales);
+    printf("Errores: %i\n",errores);
 
-    fclose(archivo);
     return EXIT_SUCCESS;
 }

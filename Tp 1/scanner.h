@@ -13,7 +13,7 @@ typedef enum
     NUMERAL,
     ERROR,
     FIN
-} TOKEN;    // Lexemas
+} TOKEN;    // Tokens que reconozco
 
 typedef enum
 {
@@ -27,9 +27,9 @@ typedef enum
 
 
 // Declaraciones de funciones a utilizar
-TOKEN scanner(FILE*);
-int cambiar_estado(CARACTER);
-TOKEN token_reconocido(int,FILE*);
+TOKEN scanner();
+int cambiar_estado(char);
+TOKEN token_reconocido(int);
 bool debo_parar(int);
 
 #endif // SCANNER_H_INCLUDED

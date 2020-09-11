@@ -1,7 +1,7 @@
 #include "scanner.h"
 
 int estado_actual = 0;
-CARACTER c;
+char c;
 
 int tabla_transicion[9][6] = 
 {
@@ -16,7 +16,7 @@ int tabla_transicion[9][6] =
     {99, 99, 99, 99, 99, 99},
 };
 
-int cambiar_estado(CARACTER c)
+int cambiar_estado(char c)
 {
     if(isdigit(c))
         return tabla_transicion[estado_actual][DIGITO];
@@ -32,6 +32,8 @@ int cambiar_estado(CARACTER c)
         return tabla_transicion[estado_actual][OTRO];
 }
 
+// estado aceptor -> True
+// estado no aceptor -> false
 const bool estados[9] = {false,false,true,false,true,true,true,false,true};
 
 bool debo_parar(int estado)
@@ -39,16 +41,16 @@ bool debo_parar(int estado)
     return estados[estado];
 }
 
-TOKEN token_reconocido(int estado,FILE* archivo)
+TOKEN token_reconocido(int estado)
 {
-    switch (estado)
+    switch(estado)
     {
     case 2:
-        ungetc(c,archivo); 
+        ungetc(c,stdin); 
         return IDENTIFICADOR;
         break;
     case 4:
-        ungetc(c,archivo); 
+        ungetc(c,stdin); 
         return CONSTANTE_ENTERA;
         break;
     case 5:
@@ -58,21 +60,21 @@ TOKEN token_reconocido(int estado,FILE* archivo)
         return FIN;
         break;      
     case 8:
-        ungetc(c,archivo); 
+        ungetc(c,stdin); 
         return ERROR;
         break;
     }
 }
 
-TOKEN scanner(FILE* archivo)
+TOKEN scanner()
 {
     TOKEN tk;
     while(!debo_parar(estado_actual))
     {
-        c = fgetc(archivo);
+        c = getchar();
         estado_actual = cambiar_estado(c);
     }
-    tk = token_reconocido(estado_actual,archivo); 
+    tk = token_reconocido(estado_actual); 
     estado_actual = 0;
     return tk;
 }
