@@ -5,7 +5,7 @@ int constantes = 0;
 int numerales = 0; 
 int errores = 0;
 
-int main()
+int main(void)
 {
     TOKEN token_leido;
     printf("-------------------\n");

@@ -48,21 +48,16 @@ TOKEN token_reconocido()
     case 2:
         ungetc(c,stdin); 
         return IDENTIFICADOR;
-        break;
     case 4:
         ungetc(c,stdin); 
         return CONSTANTE_ENTERA;
-        break;
     case 5:
         return NUMERAL;
-        break; 
     case 6:
         return FIN;
-        break;      
     case 8:
         ungetc(c,stdin); 
         return ERROR;
-        break;
     }
 }
 
