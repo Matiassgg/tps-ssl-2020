@@ -43,9 +43,10 @@ bool debo_parar()
 
 TOKEN token_reconocido()
 {
+    // podriamos usar un nuevo enum para los estados
     switch(estado_actual)
     {
-    case 2:
+    case 2: 
         ungetc(c,stdin); 
         return IDENTIFICADOR;
     case 4:
@@ -64,6 +65,7 @@ TOKEN token_reconocido()
 TOKEN scanner()
 {
     TOKEN tk;
+    // hay que usar el estado_actual = 0 por aca y hacerlo local
     while(!debo_parar())
     {
         c = getchar();

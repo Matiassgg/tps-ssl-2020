@@ -1,4 +1,5 @@
-#include "scanner.c"
+#include "scanner.h"    // incluyo el .h , y no el .c
+#include <stdlib.h>     // solo la uso aca esta libreria , entonces no va estrictamente en el .h
 
 int identificadores = 0;
 int constantes = 0;
