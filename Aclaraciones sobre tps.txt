@@ -1,0 +1,17 @@
+Trabajo Nº 1
+
+No se debe hacer un include de un .c solo los .h
+Un enum de estados puede evitar números mágicos en scanner
+En los .h no se incluye nada que no sea estrictamente necesario para header
+
+Trabajo Nº 2
+
+???
+
+Trabajo Nº 3
+
+???
+
+Trabajo Nº 4
+
+???
