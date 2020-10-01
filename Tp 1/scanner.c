@@ -60,12 +60,13 @@ TOKEN token_reconocido()
         ungetc(c,stdin); 
         return ERROR;
     }
+    return 0;
 }
 
 TOKEN scanner()
 {
     TOKEN tk;
-    // hay que usar el estado_actual = 0 por aca y hacerlo local
+    // hay que usar el estado_actual = 0 por aca y hacerlo local para que quede mas 'acorde'
     while(!debo_parar())
     {
         c = getchar();
