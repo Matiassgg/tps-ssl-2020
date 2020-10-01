@@ -6,7 +6,7 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%201)
 
 Aprobado el 22 de Septiembre de 2020 
 
-## Trabajo práctico Nº2 : BNF de gramática lexica y sintáctica 
+## Trabajo práctico Nº2 : Gramática del lenguaje mini
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis)
 
 ## Trabajo práctico Nº3 : XXXXXXXX
