@@ -1,3 +1,4 @@
+// Tokens que reconozco
 enum token{
 		FDT,
 		PROGRAMA,
@@ -9,13 +10,3 @@ enum token{
 		IDENTIFICADOR,
 		CONSTANTE
 };
-
-
-
-
-
-
-
-
-
-
