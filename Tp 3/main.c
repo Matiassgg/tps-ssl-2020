@@ -7,10 +7,8 @@
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-*/                                                             
+*/                                                    
 //////////////////////////////////////////////////////////////////////////////////////
-
-
 // Esta cabecera la generas despues de haber hecho "flex scanner.l"
 #include "scanner.h"
 int TOKEN;
@@ -32,9 +30,8 @@ int main()
 		else{
 			// Si es solo un caracter el TOKEN muestro ese caracter
 			printf("Token: \'%c\'\n",TOKEN);
-		}
-			 
-        }while(TOKEN != FDT);
+		} 
+	} while(TOKEN != FDT);
         
 	return EXIT_SUCCESS;		
 }
