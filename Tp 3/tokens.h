@@ -9,3 +9,13 @@ enum token{
 		IDENTIFICADOR,
 		CONSTANTE
 };
+
+
+
+
+
+
+
+
+
+
