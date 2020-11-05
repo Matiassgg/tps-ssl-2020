@@ -10,9 +10,9 @@
 
 Letra														[[:alpha:]]
 Digito														[0-9]
-Letra_Digito												[[:alnum:]]
+Letra_Digito													[[:alnum:]]
 Espacio														[[:space:]]
-OperadorAsignacion											"<-"
+OperadorAsignacion												"<-"
 Comentario													"##".*
 Otros														[[:punct:]]{-}[();,+\-*/]
 
@@ -22,22 +22,20 @@ declarar													return DECLARAR;
 leer														return LEER;
 escribir													return ESCRIBIR;
 fin-prog													return FIN_PROG;
-{Letra}{Letra_Digito}*										return IDENTIFICADOR;
+{Letra}{Letra_Digito}*												return IDENTIFICADOR;
 {Digito}+													return CONSTANTE;
-"("															return '(';
-")"															return ')';
-","															return ',';
-"+"															return '+';
-"-"															return '-';
-"*"															return '*';
-"/"															return '/';
-";"															return ';';
-{OperadorAsignacion} 										return ASIGNACION;
+"("														return '(';
+")"														return ')';
+","														return ',';
+"+"														return '+';
+"-"														return '-';
+"*"														return '*';
+"/"														return '/';
+";"														return ';';
+{OperadorAsignacion} 												return ASIGNACION;
 {Otros}+													printf("Error léxico: cadena desconocida: %s\n",yytext);
-{Letra}{Letra_Digito}*{Otros}+({Letra_Digito}|{Otros})*		printf("Error léxico: identificador inválido: %s\n",yytext);
-{Digito}+{Letra}+{Letra_Digito}*							printf("Error léxico: constante inválida: %s\n",yytext);
+{Letra}{Letra_Digito}*{Otros}+({Letra_Digito}|{Otros})*								printf("Error léxico: identificador inválido: %s\n",yytext);
+{Digito}+{Letra}+{Letra_Digito}*										printf("Error léxico: constante inválida: %s\n",yytext);
 {Espacio}+													|
-{Comentario}												;
+{Comentario}													;
 %%
-
-
