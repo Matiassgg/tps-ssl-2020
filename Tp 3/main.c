@@ -9,7 +9,6 @@
 */                                                             
 //////////////////////////////////////////////////////////////////////////////////////
 
-// Esta cabecera la generas despues de haber hecho "flex scanner.l"
 #include "scanner.h"
 int TOKEN;
 char *token_names[] = {"Fin de archivo","Programa","Declarar","Leer","Escribir","Fin-Prog","Asignacion","Identificador","Constante"};
@@ -28,7 +27,7 @@ int main()
 			printf("Token: %s\tlexema: %s\n",token_names[TOKEN],yytext);
 		}
 		else{
-			// Si es solo un caracter el TOKEN muestro ese caracter
+			// Si es solo un caracter el TOKEN, muestro ese caracter
 			printf("Token: \'%c\'\n",TOKEN);
 		}		 
     } while(TOKEN != FDT);
