@@ -9,10 +9,6 @@
 */                                                             
 //////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-=======
-// Esta cabecera la generas despues de haber hecho "flex scanner.l"
->>>>>>> d579bb5f15bed1c46d3c5ab3104ab816fb69b296
 #include "scanner.h"
 int TOKEN;
 char *token_names[] = {"Fin de archivo","Programa","Declarar","Leer","Escribir","Fin-Prog","Asignacion","Identificador","Constante"};
