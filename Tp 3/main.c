@@ -1,9 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////////
 /*
-      TP3 2018 "Flex"
+      TP3-2020-"Flex"
       Grupo 03
       
-      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      Matias Gabriel Grillo - 16-7053-0
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 */                                                             
@@ -30,7 +30,7 @@ int main()
 			// Si es solo un caracter el TOKEN, muestro ese caracter
 			printf("Token: \'%c\'\n",TOKEN);
 		}		 
-    } while(TOKEN != FDT);
+	} while(TOKEN != FDT);
         
 	return EXIT_SUCCESS;		
 }
