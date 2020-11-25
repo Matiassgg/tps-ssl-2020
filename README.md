@@ -9,9 +9,9 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%201)
 ## Trabajo práctico Nº2 : Gramática del lenguaje mini
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%202)
 
-**Aprobado ?** 
+**Aprobado el 25 de Noviembre de 2020** 
 
-## Trabajo práctico Nº3 : Flex
+## Trabajo práctico Nº3 : Escáner del lenguaje mini con Flex
 
 ### Algunas aclaraciones respecto a los archivos (si ves un tabulacion horrible):
     → El archivo .l que es el de flex tiene una horrible tabulacion aca en git pero a fines practicos anda igual si lo tratas de bajar
@@ -23,8 +23,8 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%203)
 
 **Aprobado ?** 
 
-## Trabajo práctico Nº4 : XXXXXXXX
-Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis)
+## Trabajo práctico Nº4 : Parser del lenguaje mini con Bison
+Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%204)
 
 **Aprobado ?** 
 
