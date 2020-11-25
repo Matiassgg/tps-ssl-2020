@@ -6,7 +6,8 @@ En los .h no se incluye nada que no sea estrictamente necesario para header
 
 Trabajo Nº 2
 
-???
+Les faltó cortar la recursión de listaSentencias
+valor en lugar de generar -valor conviene que genere -expresión, es más abarcativo
 
 Trabajo Nº 3
 
