@@ -1,6 +1,10 @@
 # Tps-SSL UTN-FRBA
 Repo para los tps de la cursada de los jueves mañana 2020 con Eduardo Zúñiga.
 
+### Algunas aclaraciones respecto a los archivos (si se ve un tabulacion horrible):
+* Existen archivos que tienen una tabulacion malisima pero a fines practicos anda igual si se trata de bajar.
+* Esa tabulacion seguramente se debe a la maquina virtual linux que usamos para el desarrollo de los tps.
+* Tu tranquilo yo nervioso , los tps tanto para la parte de bison como flex andan igual
 ## Trabajo práctico Nº1 : Un escáner elemental
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%201)
 
@@ -12,12 +16,6 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%202)
 **Aprobado el 25 de Noviembre de 2020** 
 
 ## Trabajo práctico Nº3 : Escáner del lenguaje mini con Flex
-
-### Algunas aclaraciones respecto a los archivos (si ves un tabulacion horrible):
-* El archivo .l que es el de flex tiene una horrible tabulacion aca en git pero a fines practicos anda igual si lo tratas de bajar
-* Esa tabulacion se debe a que usamos una maquina virtual linux y la tabulacion en el gedit de esa VM como que
-destroza cualquier tabulacion en el git , nose bien porque
-* Como dije , a fines practicos sigue andando cuando hagas flex "tuArchivo.l" , compiles , etc ..
 
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%203)
 
