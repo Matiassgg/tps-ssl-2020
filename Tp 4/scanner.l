@@ -7,6 +7,7 @@
 %option outfile="scanner.c"
 %option noinput
 %option nounput
+%option yylineno
 
 Letra														[[:alpha:]]
 Digito														[0-9]

@@ -1,6 +1,7 @@
 %{
 	#include <stdio.h>
 	#include "scanner.h"
+	void yyerror(const char *);
 %}
 
 
@@ -14,7 +15,7 @@
 %defines "parser.c"
 
 %start programa						// Es el axioma de la gramatica sintactica
-
+%define parse.error detailed       // Mas detalles al encontrar un error 
 
 %token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE
 %token ASIGNACION "<-"
@@ -56,5 +57,5 @@ valor :						IDENTIFICADOR
 
 // Informa la ocurrencia de un error en un determinada linea del fuente
 void yyerror(const char *s){
-        //printf("línea #X \n");
+		printf("línea #%d  %s\n", yylineno, s);
 }
