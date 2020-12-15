@@ -4,7 +4,6 @@ Repo para los tps de la cursada de los jueves mañana 2020 con Eduardo Zúñiga.
 ### Algunas aclaraciones respecto a los archivos (si se ve un tabulacion horrible):
 * Existen archivos que tienen una tabulacion malisima pero a fines practicos anda igual si se trata de bajar.
 * Esa tabulacion seguramente se debe a la maquina virtual linux que usamos para el desarrollo de los tps.
-* Tu tranquilo yo nervioso , los tps tanto para la parte de bison como flex andan igual
 ## Trabajo práctico Nº1 : Un escáner elemental
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%201)
 
@@ -26,7 +25,7 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%204)
 
 **Aprobado ?** 
 
-## Trabajo práctico Nº5 : XXXXXXXX
-Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis)
+## Trabajo práctico Nº5 : Compilador de lenguaje mini
+Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%205)
 
 **Aprobado ?** 
