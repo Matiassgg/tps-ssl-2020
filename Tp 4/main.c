@@ -14,18 +14,6 @@
 
 int main(void)
 {	
-/*	switch(yyparse()){
-		case 0:
-			printf("Exito"); printf("Errores sintacticos: %d - Errores lexicos: %d\n",yynerrs,errlex);	
-			return 0;
-		case 1:
-			printf("Error"); printf("Errores sintacticos: %d - Errores lexicos: %d\n",yynerrs,errlex);	
-			return 1;
-		case 2:
-			printf("Memoria insuficiente");
-			return 2;
-	} */
-	
 	switch( yyparse() ) {
 		case 0: printf("\nCompilación terminada con éxito");
 			break;		
