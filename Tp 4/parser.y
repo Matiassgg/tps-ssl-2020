@@ -1,24 +1,24 @@
-%{
+%code top{
 	#include <stdio.h>
 	#include "scanner.h"
-	void yyerror(const char *);
-%}
-
+}
 
 %code provides {
+	void yyerror(const char *);
 	extern int errlex; 				// Contador de errores lexicos
+	extern int yynerrs;
 }
 
 %define api.value.type{char *}		// Registro semantico de tipo char*
 
 %defines "parser.h"					
-%defines "parser.c"
+%output "parser.c"
 
-%start programa						// Es el axioma de la gramatica sintactica
-%define parse.error detailed       // Mas detalles al encontrar un error 
+%start todo						// Es el axioma de la gramatica sintactica
+%define parse.error verbose       // Mas detalles al encontrar un error         // No me funciona el detailed, lo cambie a verbose
 
-%token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE
-%token ASIGNACION "<-"
+%token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE ASIGNACION
+//%token ASIGNACION "<-"
 
 %left  '-'  '+'       	// Tienen menor precedencia , va "mas arriba"
 %left  '*'  '/'       	// Tienen mas precedencia
@@ -26,36 +26,40 @@
 
 %%
 // Lo dejo con recursion a derecha la gramatica o la cambio a izquierda porque bison se lleva mejor ??? aaaaaaaaaaaaaaaaaaaaaaaaa
-programa :					PROGRAMA listaSentencias FIN_PROG;
+todo	:				programa							{if (yynerrs || errlex) YYABORT;}
 
-listaSentencias :			sentencia 
-						| 	sentencia listaSentencias;
+programa :				PROGRAMA listaSentencias FIN_PROG;
 
-sentencia :					LEER'('listaIdentificadores')'';'			{printf("leer\n")} 
-						|	ESCRIBIR'('listaExpresiones')'';'			{printf("escribir\n")} 
-						|	DEFINIR IDENTIFICADOR';'					{printf("definir \n",)} 		// Falta el lexema del identificador de la declaracion
-						|	IDENTIFICADOR"<-"expresion';'				{printf("asignación \n",)};
+listaSentencias :		sentencia 
+					| 	sentencia listaSentencias;
 
-listaIdentificadores :		IDENTIFICADOR 
-						| 	IDENTIFICADOR','listaIdentificadores;
+sentencia :				LEER'('listaIdentificadores')'';'		    {printf("leer\n");} 
+					|	ESCRIBIR'('listaExpresiones')'';'			{printf("escribir\n");} 
+					|	DECLARAR IDENTIFICADOR';'				    {printf("declarar %s\n", $IDENTIFICADOR);} 		// Falta el lexema del identificador de la declaracion
+					|	IDENTIFICADOR ASIGNACION expresion';'		{printf("asignación \n");}
+					|   error ';'
 
-listaExpresiones :			expresion 
-						| 	expresion','listaExpresiones;
+listaIdentificadores :	IDENTIFICADOR 								
+					| 	IDENTIFICADOR','listaIdentificadores;
+
+listaExpresiones :		expresion
+				    | 	expresion','listaExpresiones;
 						
-expresion:				  	valor
-						| 	'-'valor %prec NEG							{printf("inversion\n");}
-                        | 	'('expresion')' 							{printf("paréntesis\n");}
-                        | 	expresion '+' expresion 					{printf("suma\n");}
-                        | 	expresion '-' expresion 					{printf("resta\n");}
-                        | 	expresion '*' expresion 					{printf("multiplicacion\n");}
-                        | 	expresion '/' expresion 					{printf("division\n");};
+expresion:			  	valor
+			        | 	'-'valor %prec NEG							{printf("inversión\n");}
+                   	| 	'('expresion')' 							{printf("paréntesis\n");}
+                    | 	expresion '+' expresion 					{printf("suma\n");}
+                  	| 	expresion '-' expresion 					{printf("resta\n");}
+                   	| 	expresion '*' expresion 					{printf("multiplicación\n");}
+                  	| 	expresion '/' expresion 					{printf("división\n");};
                         
-valor :						IDENTIFICADOR
-						|	CONSTANTE
+valor :					IDENTIFICADOR
+					|	CONSTANTE
 %%
 
+int errlex = 0;
 
-// Informa la ocurrencia de un error en un determinada linea del fuente
+// Informa la ocurrencia de un error en una determinada linea del fuente
 void yyerror(const char *s){
 		printf("línea #%d  %s\n", yylineno, s);
 }

@@ -1,7 +1,12 @@
 %top{
 	#include <stdio.h>
-	#include "tokens.h"	
+	#include "parser.h"
 }
+
+%{
+int errlex;
+char msg[120];
+%}
 
 %option header-file="scanner.h"
 %option outfile="scanner.c"
@@ -23,7 +28,7 @@ declarar													return DECLARAR;
 leer														return LEER;
 escribir													return ESCRIBIR;
 fin-prog													return FIN_PROG;
-{Letra}{Letra_Digito}*										return IDENTIFICADOR;
+{Letra}{Letra_Digito}*										{yylval = strdup(yytext); return IDENTIFICADOR;}
 {Digito}+													return CONSTANTE;
 "("															return '(';
 ")"															return ')';
@@ -34,9 +39,9 @@ fin-prog													return FIN_PROG;
 "/"															return '/';
 ";"															return ';';
 {OperadorAsignacion} 										return ASIGNACION;
-{Otros}+													printf("Error léxico: cadena desconocida: %s\n",yytext);
-{Letra}{Letra_Digito}*{Otros}+({Letra_Digito}|{Otros})*		printf("Error léxico: identificador inválido: %s\n",yytext);
-{Digito}+{Letra}+{Letra_Digito}*							printf("Error léxico: constante inválida: %s\n",yytext);
+{Otros}+													{errlex++; sprintf(msg,"Error léxico: cadena desconocida: %s", yytext); yyerror(msg);}
+{Letra}{Letra_Digito}*{Otros}+({Letra_Digito}|{Otros})*		{errlex++; sprintf(msg, "Error léxico: identificador inválido: %s", yytext); yyerror(msg);}
+{Digito}+{Letra}+{Letra_Digito}*							{errlex++; sprintf(msg, "Error léxico: constante inválida: %s", yytext); yyerror(msg);}
 {Espacio}+													|
 {Comentario}												;
 %%
