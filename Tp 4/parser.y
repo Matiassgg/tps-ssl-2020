@@ -14,7 +14,7 @@
 %defines "parser.h"					
 %output "parser.c"
 
-%start todo
+%start programa
 %define parse.error verbose
 
 %token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE
@@ -24,10 +24,8 @@
 %left  '*'  '/'	
 %precedence NEG	
 
-%%
-todo	:				programa							{if (yynerrs || errlex) YYABORT;}
-
-programa :				PROGRAMA listaSentencias FIN_PROG;
+%%						
+programa :				PROGRAMA listaSentencias FIN_PROG {if (yynerrs || errlex) YYABORT;};
 
 listaSentencias :		sentencia 
 					| 	sentencia listaSentencias;
