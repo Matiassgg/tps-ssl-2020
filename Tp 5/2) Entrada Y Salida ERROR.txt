@@ -1,0 +1,30 @@
+código	entrada						código de máquina virtual (MV)
+===============						=========================
+
+programa						Load rtlib,
+
+		declarar var1				línea #3: syntax error, unexpected DECLARAR, expecting ';'
+		declarar var2;
+
+		leer (var1, var2);			línea #4: Error semántico: identificador var1 NO declarado
+
+		declarar &!@;				línea #5: Error léxico: cadena desconocida: &!@
+
+		declarar var2;				Reserve var2,4
+
+		declarar total; ##comentario		Reserve total,4
+
+		total <- var1 + 32z * -var5;		línea #8: Error semántico: identificador var1 NO declarado
+							línea #8: Error léxico: constante inválida inválido: 32z
+
+		var2&2@1 <- 2 * (512 + 4) ;		línea #9: Error léxico: identificador inválido: var2&2@1
+
+		escribir (total/2);			Reserve Temp#1,4
+							DIV total,2,Temp#1
+							Write Temp#1,Integer
+
+fin-prog						Exit ,
+
+
+Errores de compilación
+Errors sintácticos: 1 - Errores léxicos: 3 - Errores Semánticos: 2

@@ -1,0 +1,21 @@
+En el archivo entradaok.txt en la salida aparece una línea como:
+	MUL 2,2,Temp#5
+en vez de aparecer como:
+	MUL 2,Temp#4,Temp#5
+______________________________________________________________
+La salida del archivo entradaerr.txt aparece igual.
+______________________________________________________________
+En el archivo entradaerr2.txt en la salida aparece un error sintáctico:
+	línea #5 syntax error, unexpected ';', expecting IDENTIFICADOR
+
+y también, por este motivo, le suma un Error sintáctico al resultado (quedando en 1 en lugar de 0), lo cual me resulta razonable ya que vuela el identificador &!@ inválido y la sentencia quedaría como:
+	declarar ;
+______________________________________________________________
+
+En el parser agregué una producción más, llamada identificador.
+Hice recursión a izquierda para que aparezca el Read con los dentificadores en orden, o sea, con recursión a izquierda aparece así:
+	Read var1,Integer
+	Read var2,Integer
+pero con recursión a derecha aparece así:
+	Read var2,Integer
+	Read var1,Integer
