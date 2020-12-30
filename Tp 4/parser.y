@@ -14,7 +14,7 @@
 %defines "parser.h"					
 %output "parser.c"
 
-%start todo						// Es el axioma de la gramatica sintactica
+%start programa						// Es el axioma de la gramatica sintactica
 %define parse.error verbose       // Mas detalles al encontrar un error         // No me funciona el detailed, lo cambie a verbose
 
 %token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE ASIGNACION
@@ -26,10 +26,7 @@
 
 %%
 // Lo dejo con recursion a derecha la gramatica o la cambio a izquierda porque bison se lleva mejor ??? aaaaaaaaaaaaaaaaaaaaaaaaa
-todo	:				programa							{if (yynerrs || errlex) YYABORT;}
-					;
-					
-programa :				PROGRAMA listaSentencias FIN_PROG
+programa :				PROGRAMA listaSentencias FIN_PROG			{if (yynerrs || errlex) YYABORT;}
 					;
 
 listaSentencias :		sentencia 
