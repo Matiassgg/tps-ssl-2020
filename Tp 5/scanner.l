@@ -4,8 +4,8 @@
 }
 
 %{
-int errlex;
-char msg[120];
+	int errlex;
+	char msg[120];
 %}
 
 %option header-file="scanner.h"
