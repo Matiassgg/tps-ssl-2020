@@ -5,27 +5,26 @@
 
 %code provides {
 	void yyerror(const char *);
-	extern int errlex; 				// Contador de errores lexicos
+	extern int errlex;
 	extern int yynerrs;
 }
 
-%define api.value.type{char *}		// Registro semantico de tipo char*
+%define api.value.type{char *}
 
 %defines "parser.h"					
 %output "parser.c"
 
-%start programa						// Es el axioma de la gramatica sintactica
-%define parse.error verbose       // Mas detalles al encontrar un error         // No me funciona el detailed, lo cambie a verbose
+%start programa
+%define parse.error verbose
 
-%token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE ASIGNACION
-//%token ASIGNACION "<-"
+%token 	FDT PROGRAMA DECLARAR LEER ESCRIBIR FIN_PROG IDENTIFICADOR CONSTANTE
+%token ASIGNACION "<-"
 
-%left  '-'  '+'       	// Tienen menor precedencia , va "mas arriba"
-%left  '*'  '/'       	// Tienen mas precedencia
-%precedence NEG			// Es el cambio de contexto del operador (ahora unario) '-'
+%left  '-'  '+'
+%left  '*'  '/'
+%precedence NEG
 
 %%
-// Lo dejo con recursion a derecha la gramatica o la cambio a izquierda porque bison se lleva mejor ??? aaaaaaaaaaaaaaaaaaaaaaaaa
 programa :				PROGRAMA listaSentencias FIN_PROG			{if (yynerrs || errlex) YYABORT;}
 					;
 
@@ -35,7 +34,7 @@ listaSentencias :		sentencia
 
 sentencia :				LEER'('listaIdentificadores')'';'		    {printf("leer\n");} 
 					|	ESCRIBIR'('listaExpresiones')'';'			{printf("escribir\n");} 
-					|	DECLARAR IDENTIFICADOR';'				    {printf("declarar %s\n", $IDENTIFICADOR);} 		// Falta el lexema del identificador de la declaracion
+					|	DECLARAR IDENTIFICADOR';'				    {printf("declarar %s\n", $IDENTIFICADOR);}
 					|	IDENTIFICADOR ASIGNACION expresion';'		{printf("asignación \n");}
 					|   error ';'
 					;
@@ -64,7 +63,6 @@ valor :					IDENTIFICADOR
 
 int errlex = 0;
 
-// Informa la ocurrencia de un error en una determinada linea del fuente
 void yyerror(const char *s){
 		printf("línea #%d  %s\n", yylineno, s);
 }
