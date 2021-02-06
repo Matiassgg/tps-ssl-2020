@@ -1,6 +1,9 @@
 # Tps-SSL UTN-FRBA
 Repo para los tps de la cursada de los jueves mañana 2020 con Eduardo Zúñiga.
 
+Maquina virtual utilizada: https://drive.google.com/file/d/1nzxXbdyzwC-NURWgYKmprL6Rmm1kXGyW/view
+User y pass : alumno , alumno
+
 ### Algunas aclaraciones respecto a los archivos (si se ve un tabulacion horrible):
 * Existen archivos que tienen una tabulacion malisima pero a fines practicos anda igual si se trata de bajar.
 * Esa tabulacion seguramente se debe a la maquina virtual linux que usamos para el desarrollo de los tps.
