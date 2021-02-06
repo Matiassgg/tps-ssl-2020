@@ -18,14 +18,14 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%202)
 
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%203)
 
-**Aprobado ?** 
+**Aprobado el 27 de Enero de 2021** 
 
 ## Trabajo práctico Nº4 : Parser del lenguaje mini con Bison
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%204)
 
-**Aprobado ?** 
+**Aprobado el 4 de Febrero de 2021** 
 
-## Trabajo práctico Nº5 : Compilador de lenguaje mini
+## Trabajo práctico Nº5 : Front end de compilador del lenguaje mini
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%205)
 
 **Aprobado ?** 
