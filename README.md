@@ -31,4 +31,4 @@ Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%204)
 ## Trabajo práctico Nº5 : Front end de compilador del lenguaje mini
 Here el [tp](https://github.com/Matiassgg/Grupo-TPs-Sintaxis/tree/master/Tp%205)
 
-**Aprobado ?** 
+**Aprobado el 21 de Febrero de 2021** 
