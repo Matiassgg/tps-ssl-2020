@@ -3,6 +3,7 @@ Repo para los tps de la cursada de los jueves mañana 2020 con Eduardo Zúñiga.
 
 * Maquina virtual utilizada: https://drive.google.com/file/d/1nzxXbdyzwC-NURWgYKmprL6Rmm1kXGyW/view
 * User y pass : alumno , alumno
+* Hay que ingresar con la cuenta FRBA para descargar el .ova
 
 ### Algunas aclaraciones respecto a los archivos (si se ve un tabulacion horrible):
 * Existen archivos que tienen una tabulacion malisima pero a fines practicos anda igual si se trata de bajar.
